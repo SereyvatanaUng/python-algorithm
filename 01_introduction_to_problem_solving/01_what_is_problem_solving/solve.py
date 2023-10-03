@@ -1,18 +1,18 @@
-def mprint(A) :
-  n, m = len(A), len(A[0])
-  for i in range(n) :
-    for j in range(m) :
-      print(A[i][j], end = ' ')
-    print()
-		
+def mprint(A):
+    n, m = len(A), len(A[0])
+    for i in range(n):
+        for j in range(m):
+            print(A[i][j], end=' ')
+        print()
 
-def madd(A, B) :
-  n, m = len(A), len(A[0])
-  C = [[0] * m for _ in range(n)]
-  for i in range(n) :
-    for j in range(m) :
-      C[i][j] = A[i][j] + B[i][j]
-  return C
+
+def madd(A, B):
+    n, m = len(A), len(A[0])
+    C = [[0] * m for _ in range(n)]
+    for i in range(n):
+        for j in range(m):
+            C[i][j] = A[i][j] + B[i][j]
+    return C
 
 
 N, M = map(int, input().split())
