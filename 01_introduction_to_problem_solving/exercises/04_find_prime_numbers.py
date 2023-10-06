@@ -5,26 +5,28 @@
 
 def find_prime(n, m):
     prime = []
-    sqrtm = int(m ** 0.5)
-    
+
     if m % 2 == 0:
         m -= 1
-    
+
     for i in range(m, n - 1, -2):
         is_prime = True
-        for j in range(2, sqrtm + 1):
+        if i < 3:
+            i += 1
+        sqrtn = int(i ** 0.5)
+        for j in range(2, sqrtn + 1):
             if i % j == 0:
                 is_prime = False
-                
+                break
+
         if is_prime:
             prime.append(i)
-            
+
         if len(prime) == 5:
             break
-        
-    return prime
 
+    return sorted(prime, reverse=True)
 
 
 N, M = map(int, input().split(' '))
-print(find_prime(N,M))
+print(*find_prime(N, M))
