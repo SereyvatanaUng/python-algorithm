@@ -1,5 +1,11 @@
+# sample input 1
+# 123 321
+# sample output 1
+# 313
+# 131
+
 def collatz_sequence_length(n):
-    count = 0
+    count = 1
     while n != 1:
         if n % 2 == 0:
             n //= 2
@@ -19,11 +25,10 @@ def find_longest_collatz_sequence(N, M):
             result_number = number
         elif length == max_length:
             result_number = max(result_number, number)
-    return result_number
+    return result_number, max_length
 
 
-N = int(input("Enter N: "))
-M = int(input("Enter M: "))
-result = find_longest_collatz_sequence(N, M)
-print(
-    f"The number with the longest Collatz sequence in the range [{N}, {M}] is: {result}")
+N, M = map(int, input().split(' '))
+result, length = find_longest_collatz_sequence(N, M)
+print(result)
+print(length)

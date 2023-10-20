@@ -18,10 +18,7 @@ def lcm_of_set_recursive(numbers, current_index=0):
     return lcm_of_set_recursive(remaining_numbers, current_index)
 
 
-# Input the set of positive integers
-k = int(input("Enter the number of positive integers: "))
-x = list(map(int, input("Enter the positive integers separated by spaces: ").split()))
+x = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
-# Calculate and print the LCM of the set
 result_lcm = lcm_of_set_recursive(x)
-print(f"The LCM of the set is: {result_lcm}")
+print(result_lcm)
