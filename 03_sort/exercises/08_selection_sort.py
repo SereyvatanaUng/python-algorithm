@@ -1,16 +1,16 @@
-def selectionsort(n, s):
+def selectionsort(s):
     cnt = 0
+    n = len(s)
     for i in range(n - 1):
         minv, minj = s[i], i
         for j in range(i + 1, n):
-            if s[j] < minv:
+            if s[j] > minv:
                 minv, minj = s[j], j
         if i != minj:
             s[i], s[minj] = s[minj], s[i]
             cnt += 1
-    return cnt
+    return s
 
 
-N = int(input())
 S = list(map(int, input().split()))
-print(selectionsort(N, S))
+print(selectionsort(S))
