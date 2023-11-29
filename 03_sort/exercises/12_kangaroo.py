@@ -19,3 +19,20 @@
 
 # Sample Output 1
 # 1
+
+N = list(map(int, input().split()))
+cnt = 0
+
+while True:
+    if N[0] > N[1]:
+        cnt += 1
+        N[0], N[1] = N[1], N[0]
+        continue
+    elif N[2] > N[1]:
+        cnt += 1
+        N[1], N[2] = N[2], N[1]
+        continue
+    else:
+        break
+
+print(cnt)
